@@ -1,25 +1,23 @@
-//PRUEBA 3
 class User {
-    firstName;
-    lastName;
-    middleName;
-    
-    constructor(data = {}){
-        this.firstName = data.firstName || '';
-        this.lastName = data.lastName || '';
-        this.middleName = data.middleName;
-    }
+	firstName;
+	lastName;
+	middleName;
+	constructor(data = {}){
+	this.firstName = data.firstName;
+	this.lastName = data.lastName || '';
+	this.middleName = data.middleName;
+	}
 }
-    /**
-    * Test Suite
-    */
+/**
+* Test Suite
+*/
 describe(`${User.name} Class`, () => {
 	it('first name defaults to empty', () => {
-		// arrange
+	// arrange
 	const data = { firstName: null };
-		// act
+	// act
 	const model = new User(data);
 	// assert
 	expect(model.firstName).toBe('');
-});
+	});
 });

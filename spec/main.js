@@ -1,28 +1,24 @@
-//Ejemplo 2
+//Test Suite
 describe(`${User.name} Class`, () => {
-	it('exists', () => {
-		expect(User).toBeDefined()
-	})
 
-	let model
-	beforeEach(() => {
-		model = new User()
-	})
+	let model;
 
-	describe('additional matcher examples', () => {
-		it('gets full name pieces', () => {
-			const firstName = 'César'
-			const middleName = 'Zaniru'
-			const lastName = 'Guerra'
-			model = new User({firstName, middleName, lastName})
-			expect(model.fullNamePieces).toEqual([firstName, middleName, lastName])
-		})
-		it('checks if theres middle name', () => {
-			const firstName = 'César'
-			const middleName = 'Zaniru'
-			const lastName = 'Guerra'
-			model = new User({firstName, middleName, lastName})
-			expect(model.fullNamePieces).toContain(middleName)
-		})
-	})
-})
+    beforeEach(()=>{
+        model = new User();
+    });
+
+	describe('additional matcher testing area', () => {
+        //toBeDefined(), toEqual()
+		it('has my first name', () => {
+            //arrange
+			const firstName = 'Dylan';
+			const lastName = 'Israel';
+
+            //act
+            model = new User({firstName, lastName});
+
+            //assert
+            expect(model.fullName).toMatch(/Dylan/);
+		});
+	});
+});
